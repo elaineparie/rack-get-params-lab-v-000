@@ -11,7 +11,11 @@ class Application
   elsif @@cart.each do |cart_item|
         resp.write "#{cart_item}\n"
     end
-      end
+
+  elsif req.path.match(/add/)
+    search_term = req.params["item"]
+      end 
+        
 
     if req.path.match(/items/)
       @@items.each do |item|
