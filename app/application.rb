@@ -26,9 +26,6 @@ else
 end
 
 resp.finish
-end
-end
-
 
 
 
