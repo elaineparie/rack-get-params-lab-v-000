@@ -17,6 +17,7 @@ class Application
     search_term = req.params["item"]
     if @@items.include?(search_term)
    resp.write "added #{search_term}"
+   @@cart << search_term
  else
    resp.write "Couldn't find #{search_term}"
  end
@@ -26,8 +27,6 @@ else
 end
 
 resp.finish
-
-
 
     if req.path.match(/items/)
       @@items.each do |item|
