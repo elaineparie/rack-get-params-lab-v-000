@@ -6,12 +6,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-  if req.path.match(/cart/)
-      @@cart.each do |cart_item|
+  if req.path.match(/cart/) && @@cart.empty?
+    resp.write "Your cart is empty."
+  elsif @@cart.each do |cart_item|
         resp.write "#{cart_item}\n"
       end
-    elsif @@cart.empty?
-      resp.write "Your cart is empty."
       end
 
     if req.path.match(/items/)
