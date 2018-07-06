@@ -26,9 +26,8 @@ end
 
 resp.finish
 end
-end
-end
-      end
+  end
+    end
 
 
     if req.path.match(/items/)
